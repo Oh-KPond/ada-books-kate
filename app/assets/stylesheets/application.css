@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+.page-wrapper {
+  margin: 3%;
+  padding: 2%;
+  border: 1px solid black;
+  height: 550px;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+p {
+  width: 20%;
+}
+
 .title a {
   font-weight: bold;
   text-decoration: none;
