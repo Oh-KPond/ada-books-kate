@@ -1,5 +1,9 @@
 class BooksController < ApplicationController
   def show
+    id = params[:id]
+    @book = BOOKS_LIST.find do |book|
+      book[:id] == id.to_i
+    end
   end
 
   def new
