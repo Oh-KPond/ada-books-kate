@@ -2,7 +2,7 @@
 <ul>
 <% @books.each do |book| %>
   <li>
-    <span class="title"><%= link_to book[:title], book_path(book[:id])%></span> by <%= book[:author] %>
+    <span class="title"><%= link_to book.title, book_path(book.id)%></span> by <%= book.author %>
   </li>
 <% end %>
 </ul>
