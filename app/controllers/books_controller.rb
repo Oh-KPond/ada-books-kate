@@ -8,6 +8,11 @@ class BooksController < ApplicationController
   end
 
   def create
+    @book = Book.new
+    @book.title = params[:title]
+    @book.author = params[:author]
+    @book.description = params[:description]
+    @book.save
   end
 
   def edit
