@@ -63,3 +63,7 @@ p {
 .title a:hover {
   color: blue;
 }
+
+.author {
+  background-color: magenta;
+}

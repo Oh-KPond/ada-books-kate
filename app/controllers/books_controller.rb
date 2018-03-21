@@ -5,13 +5,15 @@ class BooksController < ApplicationController
   end
 
   def new
+    @book = Book.new
+    #creates a blank book object
   end
 
   def create
     @book = Book.new
-    @book.title = params[:title]
-    @book.author = params[:author]
-    @book.description = params[:description]
+    @book.title = params[:book][:title]
+    @book.author = params[:book][:author]
+    @book.description = params[:book][:description]
     @book.save
   end
 

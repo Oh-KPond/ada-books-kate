@@ -1,15 +1,13 @@
 <h2>Create a New Book</h2>
-<form action="/books" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<%= form_for @book do |f| %>
+  <%= f.label :author, class: "author" %>
+  <%= f.text_field :author, placeholder: "this is a placeholder" %>
 
-  <label for="title">Title</label>
-  <input type="text" name="title" value="" id="title">
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
-  <label for="author">Author</label>
-  <input type="text" name="author" value="" id="value">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
 
-  <label for="description">Description</label>
-  <textarea name="description" value="" id="description" placeholder="Put your description here."></textarea>
-
-  <input type="submit" name="submit" value="">
-</form>
+  <%= f.submit %>
+<% end %>
