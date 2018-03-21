@@ -17,6 +17,8 @@ class BooksController < ApplicationController
 
     if book.save # it worked!
       redirect_to books_path
+    else
+      render :new
     end
 
   end
