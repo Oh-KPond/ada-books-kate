@@ -15,6 +15,11 @@ class BooksController < ApplicationController
     @book.author = params[:book][:author]
     @book.description = params[:book][:description]
     @book.save
+
+    if @book.save # it worked!
+      redirect_to books_path
+    end
+
   end
 
   def edit
