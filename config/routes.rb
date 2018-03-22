@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'books#index'
+  # root_path exists
+
   get '/books', to: 'books#index'
 
   # the following two should always go together
