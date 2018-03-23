@@ -1,13 +1,2 @@
 <h2>Create a New Book</h2>
-<%= form_for @book do |f| %>
-  <%= f.label :author, class: "author" %>
-  <%= f.text_field :author, placeholder: "this is a placeholder" %>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-
-  <%= f.submit %>
-<% end %>
+<%= render partial: "form" %>
