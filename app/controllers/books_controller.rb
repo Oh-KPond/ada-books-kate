@@ -10,10 +10,10 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new
-    book.title = params[:book][:title]
-    book.author = params[:book][:author]
-    book.description = params[:book][:description]
+    book = Book.new(book_params)
+    # book.title = params[:book][:title]
+    # book.author = params[:book][:author]
+    # book.description = params[:book][:description]
 
     if book.save # it worked!
       redirect_to books_path
@@ -49,4 +49,11 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
   end
+
+  private
+
+  def book_params
+    return params.require(:book).permit(:title, :author, :description)
+  end
+
 end
