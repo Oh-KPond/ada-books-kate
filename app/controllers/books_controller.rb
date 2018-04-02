@@ -30,7 +30,7 @@ class BooksController < ApplicationController
   def update
     book = Book.find_by(id: params[:id])
     book.title = params[:book][:title]
-    book.author = params[:book][:author]
+    book.author_id = params[:book][:author_id]
     book.description = params[:book][:description]
 
     if book.save
@@ -53,7 +53,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    return params.require(:book).permit(:title, :author, :description)
+    return params.require(:book).permit(:title, :author_id, :description)
   end
 
 end
