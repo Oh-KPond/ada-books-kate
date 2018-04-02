@@ -1,3 +1,3 @@
 class Author < ApplicationRecord
-  add_reference :books, :author, foreign_key: true
+  has_many :books
 end
