@@ -3,7 +3,7 @@
   <%= f.text_field :title %>
 
   <%= f.label :author %>
-  <%= f.text_field :author %>
+  <%= f.select :author_id, Author.all.map { |author| [author.name, author.id]} %>
 
   <%= f.label :description %>
   <%= f.text_area :description %>
