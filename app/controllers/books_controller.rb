@@ -10,12 +10,12 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
+    @book = Book.new(book_params)
     # book.title = params[:book][:title]
     # book.author = params[:book][:author]
     # book.description = params[:book][:description]
 
-    if book.save # it worked!
+    if @book.save # it worked!
       redirect_to books_path
     else
       render :new
