@@ -1,1 +1,10 @@
+<% if @book.errors.any? %>
+  <ul class="errors">
+    <% @book.errors.each do |field, message| %>
+      <li>
+        <strong><%= field.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 <%= render partial: "form" %>
