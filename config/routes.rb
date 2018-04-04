@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'books#index'
   # root_path exists
 
+  resources :authors
+  
   resources :books
 
   # get '/books', to: 'books#index'
