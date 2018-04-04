@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   root 'books#index'
   # root_path exists
 
-  resources :authors
-  
+  resources :authors do
+    resources :books, only: [:index, :new]
+  end
+
   resources :books
 
   # get '/books', to: 'books#index'
