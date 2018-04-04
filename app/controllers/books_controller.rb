@@ -48,7 +48,13 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    # author_id = params[:author_id]
+    if params[:author_id]
+      author = Author.find_by(id: params[:author_id])
+      @books = author.books
+    else
+      @books = Book.all
+    end
   end
 
   private
