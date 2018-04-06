@@ -47,3 +47,16 @@ book_list.each do |book|
   worked = Book.create(book)
   puts "#{book[:title]} was ID: #{worked.id}!"
 end
+
+
+genre_list = [
+  {name: "Sci-Fi"},
+  {name: "Romance"},
+  {name: "Non-Fiction"},
+  {name: "Fiction"}
+]
+
+genre_list.each do |genre|
+  worked = Genre.create(genre)
+  puts "#{genre[:name]} was ID #{worked.id}"
+end
