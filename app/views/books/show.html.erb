@@ -2,6 +2,15 @@
 <h3>~<%= @book.author.name %></h3>
 <p><%= @book.description %></p>
 
+<h3>Genres:</h3>
+<ul>
+  <% @book.genres.each do |genre| %>
+    <li>
+      <%= genre.name %>
+    </li>
+  <% end %>
+</ul>
+
 <ul>
   <li><%= link_to "Edit", edit_book_path %></li>
   <li><%= link_to "Delete", book_path(@book.id), method: :delete %></li>
