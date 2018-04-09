@@ -1,6 +1,7 @@
 class Author < ApplicationRecord
   has_many :books
 
+# Dee built this method that does NOT work
   def first_published
     my_books =
     self.books.order(:publication_year)
