@@ -1,9 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  author: MyString
+kindred:
+  title: Kindred
+# The author exsists in the authors.yml also
+  author: butler
+  description: A good sci-fi book
+  publication_year: 1979
 
-two:
-  title: MyString
-  author: MyString
+parable:
+  title: Parable of the Sower
+  author: butler
+  description: Fire drugs?
+  publication_year: 1993
+
+poodr:
+  title: Practical Object Oriented Design in Ruby
+  author: metz
+  description: A good book on programming
+  publication_year: 2012
