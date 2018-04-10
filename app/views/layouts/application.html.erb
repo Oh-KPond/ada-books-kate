@@ -10,6 +10,11 @@
 
   <body>
     <div class="page-wrapper">
+      <section class="flash">
+        <% flash.each do |name, message| %>
+        <div class="<%= name %>"><%= message %></div>
+        <% end %>
+      </section>
       <%= yield %>
       <nav class="bottom-nav">
         <ul>

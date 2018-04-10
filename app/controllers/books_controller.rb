@@ -16,8 +16,10 @@ class BooksController < ApplicationController
     # book.description = params[:book][:description]
 
     if @book.save # it worked!
+      flash[:success] = "Book added successfully"
       redirect_to books_path
     else
+      flash.now[:alert] = "Book was not created"
       render :new
     end
 
