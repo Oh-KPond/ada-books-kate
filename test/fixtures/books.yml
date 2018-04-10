@@ -6,15 +6,22 @@ kindred:
   author: butler
   description: A good sci-fi book
   publication_year: 1979
+  genres:
+    - sci-fi
+    - romance
 
 parable:
   title: Parable of the Sower
   author: butler
   description: Fire drugs?
   publication_year: 1993
+  genres:
+    sci-fi
 
 poodr:
   title: Practical Object Oriented Design in Ruby
   author: metz
   description: A good book on programming
   publication_year: 2012
+  genres:
+    romance
