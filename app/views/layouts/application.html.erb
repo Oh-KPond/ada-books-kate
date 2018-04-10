@@ -15,11 +15,20 @@
         <div class="<%= name %>"><%= message %></div>
         <% end %>
       </section>
+
       <%= yield %>
       <nav class="bottom-nav">
         <ul>
           <li><%= link_to "Book List", books_path %></li>
           <li><%= link_to "Create New Book", new_book_path %></li>
+          <% if @user %>
+            <li>
+              Welcome <%= @user.name %>
+              <%= link_to "Logout", logout_path, method: :delete %>
+            </li>
+          <% else %>
+             <%= link_to "Login", login_form_path %>
+          <% end %>
         </ul>
       </nav>
     </div>

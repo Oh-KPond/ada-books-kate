@@ -19,7 +19,7 @@ class BooksController < ApplicationController
       flash[:success] = "Book added successfully"
       redirect_to books_path
     else
-      flash.now[:alert] = "Book was not created"
+      flash.now[:alert] = @book.errors
       render :new
     end
 
@@ -50,6 +50,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @user = User.find_by(id: session[:user_id])
     # author_id = params[:author_id]
     if params[:author_id]
       author = Author.find_by(id: params[:author_id])

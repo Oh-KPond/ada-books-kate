@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :books
 
+  get '/login', to: 'sessions#new', as: 'login_form'
+  post '/login', to: 'sessions#create', as: 'login'
+  delete '/login', to: 'sessions#destroy', as: 'logout'
+
   # get '/books', to: 'books#index'
   #
   # # the following two should always go together
