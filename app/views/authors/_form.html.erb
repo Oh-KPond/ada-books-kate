@@ -1,0 +1,8 @@
+<h2 class="my-class"><%= page_title %></h2>
+
+<%= form_for @author do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
+
+  before_action :find_book, only: [:show, :edit, :update, :destroy]
+  before_action :find_user
+
   def show
-    id = params[:id]
-    @book = Book.find(id)
   end
 
   def new
@@ -26,11 +28,9 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find_by(id: params[:id])
   end
 
   def update
-    @book = Book.find_by(id: params[:id])
     @book.update(book_params)
     # book.title = params[:book][:title]
     # book.author_id = params[:book][:author_id]
@@ -64,6 +64,10 @@ class BooksController < ApplicationController
 
   def book_params
     return params.require(:book).permit(:title, :author_id, :description, genre_ids: [])
+  end
+
+  def find_book
+    @book = Book.find_by(id: params[:id])
   end
 
 end
