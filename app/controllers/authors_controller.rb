@@ -6,11 +6,9 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @author = Author.find_by(id: params[:id])
   end
 
   def edit
-    @author = Author.find_by(id: params[:id])
   end
 
   def update
@@ -58,6 +56,6 @@ class AuthorsController < ApplicationController
   end
 
   def find_author
-    @author = Author.find_by(id: params[:author_id])
+    @author = Author.find_by(id: params[:id])
   end
 end
