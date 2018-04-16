@@ -25,4 +25,19 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
       must_redirect_to root_path
     end
   end
+
+  describe "create" do
+    it "create an author with valid data" do
+      # given
+      # when
+      post authors_path, params: {
+        author: {
+          name: "New Author"
+        }
+      }
+      # then
+        must_respond_with :redirect
+        must_redirect_to authors_path
+    end
+  end
 end
