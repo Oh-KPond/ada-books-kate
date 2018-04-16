@@ -30,11 +30,14 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
     it "create an author with valid data" do
       # given
       # when
-      post authors_path, params: {
-        author: {
-          name: "New Author"
+      proc {
+        post authors_path, params: {
+          author: {
+            name: "New Author"
+          }
         }
-      }
+      }.must_change 'Author.count', 1
+
       # then
         must_respond_with :redirect
         must_redirect_to authors_path
