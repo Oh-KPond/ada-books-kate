@@ -16,4 +16,13 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
     get author_path(authors(:metz).id)
     must_respond_with :success
   end
+
+  describe "edit" do
+    it "should redirect to the home page when going to the edit page of an author that does not exist" do
+      get edit_author_path 'foo'
+
+      must_respond_with :redirect
+      must_redirect_to root_path
+    end
+  end
 end

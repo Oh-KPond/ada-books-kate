@@ -9,6 +9,9 @@ class AuthorsController < ApplicationController
   end
 
   def edit
+    if @author.nil?
+      redirect_to root_path
+    end
   end
 
   def update
