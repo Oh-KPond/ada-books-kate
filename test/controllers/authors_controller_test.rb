@@ -2,9 +2,9 @@ require 'test_helper'
 
 class AuthorsControllerTest < ActionDispatch::IntegrationTest
   it "should get index" do
-  # when
-
   # given
+
+  # when
   get authors_path
 
   # then
