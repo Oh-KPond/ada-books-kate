@@ -11,4 +11,9 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
   must_respond_with :success
 
   end
+
+  it "should get show" do
+    get author_path(authors(:metz).id)
+    must_respond_with :success
+  end
 end
