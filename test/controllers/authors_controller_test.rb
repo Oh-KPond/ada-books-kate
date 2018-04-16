@@ -43,4 +43,19 @@ class AuthorsControllerTest < ActionDispatch::IntegrationTest
         must_redirect_to authors_path
     end
   end
+
+  describe "update" do
+    it "updates an Author's name when given a valid name and valid author" do
+
+      put author_path(authors(:metz).id), params: {
+        author: {name: "New Name"}
+      }
+
+      edited = Author.find(authors(:metz).id)
+
+      edited.name.must_equal "New Name"
+
+      must_respond_with :redirect
+    end
+  end
 end
