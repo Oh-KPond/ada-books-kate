@@ -8,9 +8,12 @@ Rails.application.routes.draw do
 
   resources :books
 
-  get '/login', to: 'sessions#new', as: 'login_form'
-  post '/login', to: 'sessions#create', as: 'login'
-  delete '/login', to: 'sessions#destroy', as: 'logout'
+  get "/auth/:provider/callback", to: "sessions#create" # for multiple providers
+  get "/auth/github", as: "github_login" # for just github as provider
+
+  delete "/logout", to: "sessions#destroy", as: "logout"
+  # get '/login', to: 'sessions#new', as: 'login_form'
+  # post '/login', to: 'sessions#create', as: 'login'
 
   # get '/books', to: 'books#index'
   #
