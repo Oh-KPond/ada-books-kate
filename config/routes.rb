@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :books
 
-  get "/auth/:provider/callback", to: "sessions#create" # for multiple providers
+  get "/auth/:provider/callback", as: 'auth_callback', to: "sessions#create" # for multiple providers
   get "/auth/github", as: "github_login" # for just github as provider
 
   delete "/logout", to: "sessions#destroy", as: "logout"
