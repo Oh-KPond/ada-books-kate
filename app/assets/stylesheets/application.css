@@ -49,6 +49,7 @@ ul li {
 
 h2 {
   font-size: 3em;
+  display: block;
 }
 
 p {
@@ -66,4 +67,8 @@ p {
 
 .author {
   background-color: magenta;
+}
+
+.inline {
+  display: inline-block;
 }

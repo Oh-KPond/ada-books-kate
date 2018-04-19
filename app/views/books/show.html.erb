@@ -1,6 +1,12 @@
 <h2><%= @book.title %></h2>
-<h3>~<%= @book.author.name %></h3>
-<p><%= @book.description %></p>
+<%= random_image(300, 400) %>
+<section class="inline">
+  <h3>~<%= @book.author.name %></h3>
+  <p><%= @book.description %></p>
+  <p>Date created: <%= readable_date(@book.created_at) %>
+  </p>
+</section>
+
 
 <h3>Genres:</h3>
 <ul>
